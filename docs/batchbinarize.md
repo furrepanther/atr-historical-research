@@ -7,7 +7,12 @@ and background (paper and stains) to improve OCR accuracy.
 
 ### Performing batch binarization with Kraken
 
-There are several ways to binarize images. One option is to use the Kraken OCR tool, which also allows you to binarize an entire folder of images at once. First of all, you have to put all the image files into a single folder.
+There are several ways to binarize images. One option is to use the Kraken OCR tool, which also allows you to binarize an entire folder of images at once. The binarization package for Kraken was developed in 2014 and 2015 by Benjamin Kiessling
+and Thomas M. Breuel, licensed under the Apache License, Version 2.0 (the "License"):
+
+[https://github.com/mittagessen/kraken/blob/main/kraken/binarization.py](https://github.com/mittagessen/kraken/blob/main/kraken/binarization.py)
+
+To use the package for batch binarization, you have to put all the image files into a single folder.
 Then you can use the ```kraken.binarization.nlbin``` function (in Python) to convert the images. Running the Python code for Kraken in a virtual environment is highly recommended. To enter your virtual environment (on Linux and Mac), use
 ```source ~/kraken-env/bin/activate``` in the terminal, replacing ```kraken-env``` for your own environment name. Then you can run the Python code with the following command:
 
