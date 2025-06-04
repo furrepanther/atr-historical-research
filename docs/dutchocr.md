@@ -38,6 +38,13 @@ kraken.py:433
                              asdict() should be called on                       
                              dataclass instances  
 ```
+We, therefore, tried CATMuS Print Fondue Large for print text instead. Here, loading the package, binarizing the image and segmenting was successful, but the process took a while on an older Linux machine because we could not rely on CPU acceleration. We received the following warning:
+```
+Could not initialize NNPACK! Reason: Unsupported hardware.
+```
+NNPACK is a CPU acceleration library used by PyTorch to speed up deep learning models. Our hardware did not support NNPACK, so PyTorch resorted to a slower method. Kraken still completed the OCR process successfully and wrote the extracted text to a new file.
+
+
 
 
                             
