@@ -61,6 +61,9 @@
 | **AI21 Jamba** | Language model for text generation and understanding. | Not designed for image processing. | Effective in various NLP tasks; not suitable for OCR. | [AI21 Jamba](https://studio.ai21.com/v2/chat) |
 | **Hugging Face** | Platform providing access to various AI models. | Offers models for both text and image processing. | Performance depends on the selected model. | [Hugging Face](https://huggingface.co/chat/) |
 
+> [!CAUTION]
+> The overview of models was created in spring 2025 and we cannot promise to update it regularly, so the information may no longer hold true when you visit the repository. AI development progresses so quickly that it is difficult to keep track, and we are also unable to test all AI models ourselves. This is why you should consult more timely contributions in tech forums for more reliable information on the different models and recommended uses.
+
 ## Ethical challenges
 
 Working with AI raises questions of research integrity and ethics, especially when historical and multilingual sources are concerned. AI-powered OCR often performs better for widely used languages such as English and Spanish. In addition, AI-based spelling corrections trained on modern and more widespread language use may alter original meanings and ingest anachronisms in texts. AI would need to be trained on more diverse sources (including historical and regional texts) to perform better. At the moment, AI use still requires a high level of human monitoring. When publishing AI-enhanced text, scholars should flag where AI interventions (e.g. spelling corrections) have altered the original and what has been done to check the quality of the AI output. In many cases, direct AI text manipulation is not recommended. But AI can be used to develop controlled vocabularies or create lists of typical errors.
