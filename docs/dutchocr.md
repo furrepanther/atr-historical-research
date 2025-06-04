@@ -44,7 +44,11 @@ Could not initialize NNPACK! Reason: Unsupported hardware.
 ```
 NNPACK is a CPU acceleration library used by PyTorch to speed up deep learning models. Our hardware did not support NNPACK, so PyTorch resorted to a slower method. Kraken still completed the OCR process successfully and wrote the extracted text to a new file.
 
+### More information
 
+Algun, S. (2018, December 6). Review for tesseract and kraken ocr for text recognition. Medium. https://medium.datadriveninvestor.com/review-for-tesseract-and-kraken-ocr-for-text-recognition-2e63c2adedd0
+
+We build internet. (n.d.). Kraken, the unknown python ocr system. Retrieved June 4, 2025, from https://www.webuildinternet.com/2016/10/01/kraken-the-unknown-python-ocr-system/
 
 
                             
