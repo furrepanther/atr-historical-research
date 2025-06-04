@@ -1,4 +1,4 @@
-# Overview of AI models and (AI-powered) OCR software used for text-processing in humanities research
+# Overview of AI models and (AI-powered) OCR/HTR software used for text-processing in humanities research
 
 ## Commonly used OCR software
 
@@ -23,6 +23,10 @@
 | **Azure AI Vision** | Provides computer vision capabilities, including text extraction from images |
 | **ABBYY FineReader** | Offers an AI-powered OCR SDK that enables software developers to integrate text recognition into their applications |
 | **Rossum** | Cloud-native platform that uses proprietary AI engine to combine traditional OCR with AI for enterprise applications that require text processing and text generation |
+
+> [!NOTE]
+> TRANSKRIBUS, especially in its browser-based light version, has an intuitive user interface and is very beginner-friendly, but also much more of a black box. Although the project started as an EU-> funded research project, the tool is now under Read Coop, a for-profit business. Therefore, TRANSKRIBUS has introduced a subscription model and gives users who pay priority access to computational > resources and better models. Also, they are marketing the tool as an AI-powered, universal platform for text recognition, which raises high user expectations. In reality, community models 
+> often underperform on less common data types, such as multilingual materials. Unfortunately, there is also little transparency about the quality of the community models, their training data, or > > performance measures. As mentioned before, we cannot say anything about their "super models" because we never paid to use them, but the overall promises of "AI" seem exaggerated when the models > > offered are still trained for rather narrow use cases. 
 
 ## AI models used for OCR cleaning and analytical tasks (experimental)
 
