@@ -50,3 +50,7 @@ for img_path in input_dir.glob("*"):
 print("\n Binarization complete. Files saved in:", output_dir) # status info will be shown in terminal
 ```
 As you can see in the code, the new file will be saved to the output folder you define as ``òutput_dir```. You can then also use these images within other OCR software.
+
+### Problems with binarizing low-res images
+
+https://stackoverflow.com/questions/73971444/binarize-low-contrast-images
