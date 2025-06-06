@@ -81,27 +81,21 @@ If your images are stored locally at ```~/ocr_input/```, run:
 
 ```oc cp ~/ocr_input/. <pod-name>:/var/ocr4all/data/<your-project-name>/input/```
 
-Replace <pod-name> and <your-project-name> with your actual values. Make sure that you copy only image files (TIFF, PNG, JPG) and that all files are directly inside ```/input/``` (not nested in subfolders).
-You cannot use PDFs or compressed ZIP folders.
+Replace <pod-name> and <your-project-name> with your actual values. Make sure that you copy only image files (TIFF, PNG, JPG) and that all files are directly inside ```/input/``` (not nested in subfolders). You cannot use PDFs or compressed ZIP folders.
+If you accidentally uploaded the wrong files, re-run ```oc cp``` with updated files. You may need to manually delete unwanted images inside the pod using ```oc rsh```.
 
-6. **Process the images through the web interface**
+7. **Segmentation with LAREX**
 
 Return to the OCR4all interface and select your newly created project. You should now see your uploaded image files listed. You can now proceed with the
-layout analysis, actual OCR, postcorrection and export. All these options can be selected in the collapsing menu on the left-hand side of your screen.
+automated layout analysis. If this fails, try and segment your scan manually with [LAREX](/larex.md). All these options can be selected in the collapsing menu on the left-hand side of your screen.
 
-### What if I need to replace or reupload files?
+8. **Process the images**
 
-If you accidentally uploaded the wrong files, re-run ```oc cp``` with updated files.
-You may need to manually delete unwanted images inside the pod using ```oc rsh```.
-
-### Collaboration rules
-
-At Maastricht University, all OCR4all users share the same namespace. Avoid modifying or deleting other users' projects.
+In the web interface, you can then move on to run a transcription model. [MORE DETAILS TO FOLLOW] 
 
 ### Contacts
 
-DSRI platform help: dsri@maastrichtuniversity.nl
-
-Local OCR4all coordination: [add responsible person or PI here]
+DSRI platform help: 
+Local OCR4all coordination:
 
 ### Related links
