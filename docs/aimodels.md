@@ -25,6 +25,8 @@
 | **Rossum** | Cloud-native platform that uses proprietary AI engine to combine traditional OCR with AI for enterprise applications that require text processing and text generation |
 | **OCCAM** | OCCAM is a cloud tool that "allows for automatically transcribing and translating printed or handwritten documents, to compare transcriptions to ground truth (manually validated transcriptions), and (as an experimental feature) to automatically correct PageXML-formatted transcriptions" |
 
+> A [Tesseract OCR workflow], combined with an automated Google translation of the text output, is presented in: Selvaganapathi, G. (2024, July 29). Optical Character Recognition (Ocr) with google translate. Medium. https://medium.com/@gayathri.s.de/optical-character-recognition-ocr-with-google-translate-9c30bfb703d7
+
 > [OCCAM](https://ai4culture.eu/resources/tools/122) is integrated with the European crowdsourcing platform [Transcribathon](https://europeana.transcribathon.eu/), which allows for manually editing transcriptions. The tool was created by Tom Vanallemeersch, CrossLang NV (Belgium), and is offered as a service on [https://ai4culture.crosslang.dev/ui/](https://ai4culture.crosslang.dev/ui/). In the GUI, there are no options to manually improve image segmentation, however, so the tool may only recognise small parts of a scan as actual text. The strength of the tool therefore lies in the evaluation and correction of workflows rather than from-scratch OCR. OCCAM’s support for PageXML correction — using language models, lexica, or validated transcriptions — can help with refining existing OCR outputs in structured formats.
 {:.note}
 
