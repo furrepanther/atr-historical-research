@@ -36,4 +36,4 @@ To undo and redo, use **Ctrl+Z** (undo) and **Ctrl+Y** (redo).
 ## Further information
 
 - OCR4all Docs: [https://github.com/OCR4all](https://github.com/OCR4all)
-- LAREX GitHub: [https://github.com/LAREX-toolkit/LAREX](https://github.com/LAREX-toolkit/LAREX)
+- LAREX GitHub: [https://github.com/LAREX-toolkit/LAREX](https://github.com/OCR4all/LAREX)
