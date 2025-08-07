@@ -25,40 +25,42 @@ route URL:
 
 ```https://ocr4all-p$$$-ocr4all-p$$$.apps.dsri2.unimaas.nl```
 
-Here, ```p$$$``` stands for the staff number of the person who created the project, which had to be anonymised. When you click on the route URL itself, you will get
-an error notification, so make sure to add ```/ocr4all/ in the end. Then you can open your browser and go to:
+Here, ```p$$$``` stands for the staff number of the person who created the project, which had to be anonymised. When you click on the route URL itself, you will get an error notification, so make sure to add ```/ocr4all/``` in the end:
 
-```https://ocr4all-p70088617-ocr4all-p70088617.apps.dsri2.unimaas.nl/ocr4all/```
+```https://ocr4all-p$$$-ocr4all-p$$$.apps.dsri2.unimaas.nl/ocr4all/```
 
-## Step 2: OCR4all demo projects
+## Step 2: optionally view OCR4all demo projects
 
 You should now be able to see the user interface with options to select a project. Here you will see a dropdown with several pre-installed projects.
-However, projects like `Geography` are **demo projects** created by OCR4all and included for testing purposes only. You cannot use these projects to load
+Projects like ```Geography``` are **demo projects** created by OCR4all and included for testing purposes only. You cannot use these projects to load
 your own data. Rather, you must create your own project before processing any files. 
 Since OCR4all does not have built-in user accounts or access control, every user should create their own project to avoid overwriting each other’s data.
 
 ## Step 3: Workflow for making a new OCR project
 
-Prepare a folder of image files on your local machine (TIFF, PNG, or JPG). Then you can follow this process:
+Prepare a folder of image files on your local machine (in TIFF, PNG, or JPG format). Then you can follow this process:
 
-1. **Login to OpenShift** (`oc login`):
+a) **Find your access token**:
 
-If you're on your **local machine** with `oc` installed, use:
+To use OCR4all on DSRI for your own data, you need to generate an individual access token first. You can find your personal token when logging in to the DSRI OpenShift web portal (as described above) and navigating to this page:
+
+[https://oauth-openshift.apps.dsri2.unimaas.nl/oauth/token/display](https://oauth-openshift.apps.dsri2.unimaas.nl/oauth/token/display)
+
+Do not share this token with anyone and store it in a safe place!
+
+b) **Login to OpenShift** (`oc login`):
+
+Open the OCR4all pod on DSRI, use the web terminal, and log in using the following information from the OpenShift web portal:
 
 ```
-oc login https://dsri2.unimaas.nl:6443 --token=<your-token>
+oc login --token=<your-token> --server=https://api.dsri2.unimaas.nl:6443
 ```
-
-You can obtain the token from the DSRI OpenShift web portal.
-If you're using the DSRI web terminal, you may already be logged in.
 
 2. **Switch to the right project**
 
-Run:
+To ensure that you are working within the right DSRI project, run the command below:
 
 ```oc project ocr4all-p$$$```
-
-This ensures you're working inside the correct OpenShift namespace.
 
 3. **Create a new OCR project**
 
