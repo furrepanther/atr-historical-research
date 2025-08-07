@@ -87,8 +87,10 @@ Once inside the running pod, navigate to the OCR4all data directory, where you w
 
 Then create a new folder for your project and its input images by running the following commands:
 
-```mkdir MyProject
-mkdir MyProject/input```
+```
+mkdir MyProject
+mkdir MyProject/input
+```
 
 Replace ```MyProject``` with the desired name of your OCR4all project. Avoid using spaces or special characters.
 
