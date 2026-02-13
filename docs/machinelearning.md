@@ -18,7 +18,11 @@ Challenges and error margins... One concern in the training of deep learning alg
 
 ## Reverse OCR
 
-The program *My Text in Your Handwriting* developed at University College London can imitate handwriting. Darks sides... ethical concerns...
+The program *My Text in Your Handwriting* (http://visual.cs.ucl.ac.uk/pubs/handwriting/) developed at University College London can imitate handwriting. 
+
+>We present an algorithm that renders a desired input string in an author's handwriting. An annotated sample of the author's handwriting is required; the system is flexible enough that historical documents can usually be used with only a little extra effort. Experiments show that our glyph-centric approach, with learned parameters for spacing, line thickness, and pressure, produces novel images of handwriting that look hand-made to casual observers, even when printed on paper.
+
+Darks sides... ethical concerns...
 
 ## References
 
