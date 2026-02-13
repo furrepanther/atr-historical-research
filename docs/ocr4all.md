@@ -40,7 +40,7 @@ The browser interface is for scholarly work and OCR processing.
 If everything is set up properly, you are able to restart OCR4all by using:
 
 ```
-docker start –ia ocr4all
+sudo docker start ocr4all
 ```
 
 If the container is running, open the following URL **in Google Chrome or Chromium**:
