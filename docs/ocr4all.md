@@ -45,7 +45,7 @@ sudo docker start ocr4all
 
 If the container is running, open the following URL **in Google Chrome or Chromium**:
 
-[http://localhost:8080/ocr4all/](http://localhost:1476/OCR4all_Web/)
+[http://localhost:8080/ocr4all/](http://localhost:8080/OCR4all_Web/)
 
 Other browsers may cause rendering or functionality issues. If the interface does not load, restart the container **from your local Ubuntu terminal** (not inside the browser):
 
