@@ -75,7 +75,7 @@ You can create projects either via the GUI (recommended) or via the terminal.
 #### Option A – Browser (recommended)
 
 1. Open:
-   [http://localhost:8080/ocr4all/](http://localhost:8080/ocr4all/)
+   [http://localhost:1476/ocr4all/](http://localhost:1476/ocr4all/)
 2. Click **Create Project**
 3. Choose a meaningful name
 
