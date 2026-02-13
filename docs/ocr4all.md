@@ -177,7 +177,9 @@ If the automated layout recognition with LAREX fails, you can try and segment yo
 
 ### Recognition (OCR / HTR)
 
-In the web interface, you can finally move on to run a transcription model once your layout recognition is complete. Under the menu item **Recognition** in the right sidebar, you will find your files for which all pre-processing steps have been successfully completed. Here you can select those scans for which you want to create an automated transcript using one OCR model. Ideally, the selected image files should be similar in style, e.g. hand-written by the same person or printed by the same publisher. Go to **line recognition models** (under **available**) to find models or model packages. You will be able to choose from different historial and modern font types. The OCR4all developers "expressly advise the use of a model package, where five models simultaneously work and interact with each other! This is much preferable to using only one model at a time." Finding suitable models for your use case is made easier via a search function. The final results will be displayed under the menu item **ground truth production**.
+In the web interface, you can finally move on to run a transcription model once your layout recognition is complete. Under the menu item **Recognition** in the right sidebar, you will find your files for which all pre-processing steps have been successfully completed. Here you can select those scans for which you want to create an automated transcript using one OCR model. Ideally, the selected image files should be similar in style, e.g. hand-written by the same person or printed by the same publisher. Go to **line recognition models** (under **available**) to find models or model packages. You will be able to choose from different historial and modern font types. The OCR4all developers "expressly advise the use of a model package, where five models simultaneously work and interact with each other! This is much preferable to using only one model at a time." Finding suitable models for your use case is made easier via a search function, where you can look for basic keywords like *antiqua*  or *fraktur*.
+
+While you are encouraged to combine several models, you can only use models from the **same model family / training group** simultaneously. Otherwise OCR4all will give you an error. Models trained with different preprocessing pipelines are incompatible. Mixing unrelated models (e.g. historical Fraktur + 19th-century Fraktur + handwriting) will either fail technically or degrade results. When working on pre-1800 German print, for instance, select several models from the **same historical Fraktur group** (e.g. `deep3_fraktur-hist/*`). Avoid mixing with `fraktur19/*` or `htr-*` models unless the material requires it. Adding too many models does not automatically improve accuracy; compatibility matters more than quantity. After running the recognition process, the final results will be displayed under the menu item **ground truth production**.
 
 Workflow summary:
 
@@ -186,11 +188,71 @@ Workflow summary:
 3. Choose a **model package**
 4. View results under **Ground Truth Production**
 
+#### Challenges in text recognition
+
+Even with carefully selected models, decorative headlines, ornamental initials, woodcut typography or stylised characters will still be difficult to transcribe. The reasons are that training corpora rarely include ornate typographic display forms and that those vary considerably. Also, the position of decorative capitals often deviates strongly from baseline letterforms. Line segmentation may fragment ornamental shapes. For research purposes, such elements may require manual correction.
+
+#### Export results from OCR4all
+
+OCR4all does not provide direct plain text export. The only official export format is:
+
+> **Ground Truth (GT) export**
+
+This produces a ZIP archive containing:
+
+- Processed page images
+- PAGE-XML files (layout + recognition)
+- Associated metadata
+
+There is no built-in `.txt` export option, which is why you will need additional software.
+
+#### Reading plain text from PAGE-XML files
+
+PAGE-XML is a structured layout format that matches text to images, not a human-readable text format.
+
+Important characteristics:
+
+- Each text line is stored as a `<TextLine>` element.
+- Recognition results are stored inside `<TextEquiv>` elements.
+- Multiple `<TextEquiv>` elements may exist per line (alternative hypotheses).
+- Each `<TextEquiv>` contains a `<Unicode>` element with text.
+
+If all `<Unicode>` elements are extracted blindly, the result may contain an illegible mix of recognition hypotheses including isolated character-level fallbacks. This can lead to output where words appear broken up into individual letters.
+
+To reproduce OCR4all’s console output, based on the highest transcription confidence, your extraction must iterate over `<TextLine>` elements and decide which of them should be preferred. Preference should normally be given to `<TextEquiv>` with `index="1"`.
+
+#### XML parsing with Python
+
+For structured extraction from PAGE-XML:
+
+- **lxml** (Python package) is recommended.
+- It supports XPath, namespace handling, and structured traversal.
+- It is lightweight and well suited for research workflows.
+
+#### Early modern characters in plain text output from PAGE XML
+
+PAGE-XML preserves Unicode faithfully. As a result, the text you will be able to extract is not normalised to modern conventions but may contain long s (ſ)
+and Ʒ as well as historical ligatures. Of course, the extracted plain text will also mirror early modern orthography unless you explicitly normalise it. No automatic spelling modernisation is applied.
+
+### Spelling normalisation (optional)
+
+If spelling normalisation is required after extraction, possible Python tools include:
+
+- `regex` (advanced pattern-based normalisation)
+- `unicodedata` (Unicode normalisation forms)
+- `ftfy` (Unicode cleanup)
+- Custom rule-based scripts (often necessary for early modern German)
+- NLP libraries such as:
+  - `spaCy` (custom pipelines)
+  - `CLTK` (for historical languages; limited for early modern German)
+
+For early modern German, normalisation is usually rule-based and project-specific rather than fully automated.
+
 #### Model training (browser)
 
 Of course, it is also possible to improve the OCR4all performance with model training based on corrected transcriptions. The training process and post-correction options are explained in detail at the bottom of the [workflow description in the OCR4all user guide](https://www.ocr4all.org/guide/user-guide/workflow). Training is computationally demanding and may take time on a laptop.
 
-#### Summary
+#### Summary of OCR4all functionalities
 
 | Task | Terminal | Browser GUI |
 |------|----------|-------------|
