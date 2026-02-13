@@ -2,7 +2,11 @@
 
 State of the art automated text recognition makes use of advanced machine learning. A mere rule-based approach for character recognition would not allow the transcription of a variety of
 fonds and handwritings, especially because characters can even vary within the same text. This is why automated text recognition now relies on neural networks (NNs), among which convolutional neural networks are the most common. (Alvin, 2024)
-Neural networks were first developed in the 1950s and have been increasingly used since the 1980s. They can abstract from dirty input data.
+Neural networks were first developed in the 1950s and have been increasingly used since the 1980s. 
+First proposal for neural networks in 1944 bz Warren McCulloch and Walter Pitts.
+In 1954, Belmont Farlez and Wesley Clark (MIT) created the first *artificial neural network*.
+
+Neural networks can abstract from dirty input data.
 
 ## Deep learning as another step forward
 
